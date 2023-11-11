@@ -1,0 +1,25 @@
+<html>
+    <head> <script src="myfun.js"></script></head>
+    <body>
+        <p id ="gfg"></p>
+        <p id ="dept"></p>
+        <p id = "func"></p>
+        <p id = "ar"></p>
+        <script>
+            const person = {Name: "Amit", Age:"24", Sal:"2000"};
+            const dept = {
+                Name: "HR", 
+                Loc:"Delhi", 
+                Director:"Kapil",
+                display: function() { 
+                    return "Name of the department is " +this.Name 
+                },
+                sq: function(a) {return a*a;}
+            };
+            document.getElementById("gfg").innerHTML = "The Name is "+person.Name + "The Age is "+person.Age;
+            document.getElementById("dept").innerHTML = "The department is "+dept.Name+ "The Director is "+dept["Director"];
+            document.getElementById("func").innerHTML = dept.display()  + " " + dept.sq(2);
+            document.getElementById("ar").innerHTML = "The Area is" + area(10,20);
+        </script>
+    </body>
+</html>

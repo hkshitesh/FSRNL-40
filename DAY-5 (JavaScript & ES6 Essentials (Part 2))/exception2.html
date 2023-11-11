@@ -1,0 +1,37 @@
+<html>
+    <head> <script src="myfun.js"></script></head>
+    <body>
+        <p id ="gfg"></p>
+        <p id ="test"></p>
+        <script>  
+            function division()
+            {   
+                a= document.getElementById("num1").value;
+                b= document.getElementById("num2").value;       
+
+                try{     
+                if(b==0)
+                {
+                    throw new Error("Denominator is zero, please change it")
+                }
+                else{
+                div = a/b;
+                document.getElementById("res").innerHTML = "Result = "+div
+                }
+            }
+            catch(e)
+            {
+                alert(e)      
+                document.getElementById("res").innerHTML = "Result is not calculated "            
+            }                                 
+            
+        }     
+                
+        </script>
+        <p>Number 1<input type = "number" id="num1"></p>
+        <p>Number 2<input type = "number" id="num2"></p>
+        <input type="button" onclick="division()" value="Result">
+        <p id ="res"></p>
+
+    </body>
+</html>

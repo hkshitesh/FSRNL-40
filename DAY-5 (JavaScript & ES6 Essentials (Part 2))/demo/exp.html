@@ -1,0 +1,21 @@
+<html>  
+<head> Exception Handling</br></head>  
+<body>  
+<script>  
+let localVar = "I am a local variable";
+function localScopeExample() {
+    // This variable is local to the function
+    let localVar = "I am a local variable";
+    console.log(localVar);
+}
+
+// Attempting to access localVar outside the function will result in an error
+// Uncommenting the next line will throw an error
+console.log(localVar);
+
+// Calling the function to see the local variable in action
+localScopeExample();
+ 
+</script>  
+</body>  
+</html> 
