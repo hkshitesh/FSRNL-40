@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <style>
+           *{
+              padding: 0;
+              margin: 0;
+              font-family: 'poppins', sans-serif;
+           }
+           body{
+              background-color: #495250;
+              display: grid;
+              height: 100vh;
+              place-items: center;
+           }
+           .main{
+              width: 400px;
+              height: 450px;
+              background-color: white;
+              position: absolute;
+              border: 5px solid black;
+              border-radius: 6px; 
+           }
+           .main input[type='text'] {
+              width: 88%;
+              position: relative;
+              height: 80px;
+              top: 5px;
+              text-align: right;
+              padding: 3px 6px;
+              outline: none;
+              font-size: 40px;
+              border: 5px solid black;
+              display: flex;
+              margin: auto;
+              border-radius: 6px;
+              color: black;
+           }
+           .btn input[type='button']{
+              width:90px;
+              padding: 2px;
+              margin: 2px 0px;
+              position: relative;
+              left: 13px;
+              top: 20px;
+              height: 60px;
+              cursor: pointer;
+              font-size: 18px;
+              transition: 0.5s;
+              background-color: #495250;
+              border-radius: 6px;
+              color: white;
+           }
+           .btn input[type='button']:hover{
+              background-color: black;
+              color: white;
+           }
+        </style>
+        <script>
+            function solve(val)
+            {
+                var v = document.getElementById("res");
+                v.value = v.value+val
+            }
+            function result()
+            {
+                var num1 = document.getElementById("res").value;
+                var num2 = eval(num1)
+                document.getElementById("res").value = num2;
+            }
+            function clr()
+            {
+                document.getElementById("res").value='';
+                
+            }
+            function back()
+
+            {
+                var bk = document.getElementById("res");
+                bk.value = bk.value.slice(0,-1);
+            }
+
+        </script>
+    <body>
+        <div class ="main">
+            <input type="text" id ="res">
+            <div class ="btn">
+                <input type = "button" value="C" onclick="clr()">
+                <input type = "button" value="%" onclick="solve('%')">
+                <input type = "button" value="<-" onclick="back()">
+                <input type = "button" value="/" onclick="solve('/')">
+                <br>
+                <input type = "button" value="7" onclick="solve('7')">
+                <input type = "button" value="8" onclick="solve('8')">
+                <input type = "button" value="9" onclick="solve('9')">
+                <input type = "button" value="*" onclick="solve('*')">
+                <br>
+                <input type = "button" value="4" onclick="solve('4')">
+                <input type = "button" value="5" onclick="solve('5')">
+                <input type = "button" value="6" onclick="solve('6')">
+                <input type = "button" value="-" onclick="solve('-')">
+                <br>
+                <input type = "button" value="1" onclick="solve('1')">
+                <input type = "button" value="2" onclick="solve('2')">
+                <input type = "button" value="3" onclick="solve('3')">
+                <input type = "button" value="+" onclick="solve('+')">
+                <br>
+                <input type = "button" value="00" onclick="solve('00')">
+                <input type = "button" value="0" onclick="solve('0')">
+                <input type = "button" value="." onclick="solve('.')">
+                <input type = "button" value="=" onclick="result()">
+                <br>
+            </div>
+        </div>
+    </body>
+</html>
