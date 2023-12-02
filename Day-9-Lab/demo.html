@@ -1,0 +1,78 @@
+<html>
+<body>
+<script>
+function register() 
+{   
+    return new Promise((resolve,reject)=>{
+    setTimeout(()=> {
+        console.log("Registration Completed");
+        resolve();
+    },5000);
+  });
+
+}
+
+function sendMail() {
+    return new Promise((resolve,reject)=>{
+    setTimeout(()=> {        
+        console.log("Send Email Completed"); 
+        resolve();       
+    },2000);
+  });
+}
+function login() {
+    return new Promise((resolve,reject)=>{
+    setTimeout(()=> {
+        console.log("Login Completed");
+        resolve();
+    },7000);
+  });
+}
+function getUserData() {
+    return new Promise((resolve,reject)=>{
+    setTimeout(()=> {
+        console.log("getUserData Completed");
+        resolve();
+    },3000);
+  });
+}
+function displayUsrData() {
+    return new Promise((resolve,reject)=>{
+    setTimeout(()=> {
+        console.log("Display User Data Completed");
+        resolve();
+    },3000);
+  });
+}
+
+// register(function() {
+//         sendMail(function(){
+//                 login(function(){
+//                     getUserData( function(){
+//                         displayUsrData();
+//                     });                    
+//                 });                
+//         });       
+// });
+
+// register().then(sendMail).then(login).then(getUserData).then(displayUsrData)
+// .catch((err)=>{
+//     console.log("Error:", err)
+// });
+
+async function final(){
+    await register();
+    await sendMail();
+    await login();
+    await getUserData();
+    await displayUsrData()
+}
+
+final().then(()=>{
+    console.log("All Completed")
+});
+
+console.log("Other Code")
+</script>
+</body>
+</html>
